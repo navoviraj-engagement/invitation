@@ -1,0 +1,225 @@
+.couple-gallery {
+    width: 100%;
+    padding: 70px 20px 100px;
+    background: #fffaf8;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.gallery-subtitle {
+    margin: 0 0 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #800000;
+}
+
+.gallery-title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    font-weight: 400;
+    color: #800000;
+}
+
+.gallery-line {
+    width: 50px;
+    height: 1px;
+    margin: 18px auto 40px;
+    background: #800000;
+}
+
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* =========================
+   IMAGE BOX
+========================= */
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f8f3f0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Initial animation state */
+    opacity: 0;
+    transform: translateY(50px) scale(0.94);
+    animation: galleryReveal 1s ease forwards;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    /*
+       Keeps the complete image visible.
+       Faces will not be cropped.
+    */
+    object-fit: contain;
+    transform: scale(1);
+    transition: transform 0.8s ease, filter 0.8s ease;
+}
+
+
+/* =========================
+   HOVER ANIMATION
+========================= */
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(0.96);
+}
+
+
+/* =========================
+   IMAGE REVEAL ANIMATION
+========================= */
+
+@keyframes galleryReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.94);
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   ANIMATION DELAYS
+========================= */
+
+.gallery-item-1 {
+    animation-delay: 0.1s;
+}
+
+.gallery-item-2 {
+    animation-delay: 0.3s;
+}
+
+.gallery-item-3 {
+    animation-delay: 0.5s;
+}
+
+.gallery-item-4 {
+    animation-delay: 0.7s;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .couple-gallery {
+        padding: 60px 25px 80px;
+    }
+    .gallery-grid {
+        max-width: 850px;
+        gap: 16px;
+    }
+    .gallery-item {
+        aspect-ratio: 4 / 5;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+    .couple-gallery {
+        padding: 50px 15px 70px;
+    }
+    /* =========================
+       TITLE
+    ========================= */
+    .gallery-subtitle {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+    .gallery-title {
+        font-size: 27px;
+    }
+    .gallery-line {
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    /* =========================
+       ONE IMAGE PER ROW
+    ========================= */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    /* =========================
+       SAME IMAGE SIZE
+    ========================= */
+    .gallery-item {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        border-radius: 12px;
+    }
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    /* =========================
+       MOBILE HOVER
+    ========================= */
+    .gallery-item:hover img {
+        transform: scale(1.03);
+    }
+    /* =========================
+       MOBILE ANIMATION
+    ========================= */
+    @keyframes galleryReveal {
+        0% {
+            opacity: 0;
+            transform: translateY(35px) scale(0.96);
+        }
+        60% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.invitation-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+.invitation-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.invitation-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+    .invitation-image {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .invitation-image {
+        width: 100%;
+        max-width: 1000px;
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 1025px) {
+    .invitation-image {
+        width: 100%;
+        max-width: 1200px;
+    }
+}
